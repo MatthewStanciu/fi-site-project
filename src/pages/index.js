@@ -25,7 +25,7 @@ export default () => (
       color="lightRed"
       textAlign="center"
       mb={4}
-      fontSize={[4, null, 4, 6]}
+      fontSize={[4, 6]}
     >
       A heading if you want it
     </Heading>
