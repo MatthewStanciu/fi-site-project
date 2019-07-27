@@ -4,6 +4,7 @@ import theme from '../theme/config'
 import Layout from '../components/Layout'
 import { Container } from '../components/Container'
 import Project from '../components/Project'
+import { projects } from '../data.json'
 
 const Header = styled(Container).attrs({ maxWidth: 72, px: 3, my: 4 })`
   display: grid;
@@ -19,30 +20,9 @@ const Header = styled(Container).attrs({ maxWidth: 72, px: 3, my: 4 })`
 export default () => (
   <Layout>
     <Header>
-      <Project
-        name="test1"
-        desc="tttest 1111"
-        url="https://matthewstanciu.me"
-        img="maxresdefault.jpg"
-      />
-      <Project
-        name="test2"
-        desc="tttest 2222"
-        url="https://matthewstanciu.me"
-        img="maxresdefault.jpg"
-      />
-      <Project
-        name="test3"
-        desc="tttest 3333"
-        url="https://matthewstanciu.me"
-        img="maxresdefault.jpg"
-      />
-      <Project
-        name="test4"
-        desc="tttest 4444"
-        url="https://matthewstanciu.me"
-        img="maxresdefault.jpg"
-      />
+      {projects.map(project => (
+        <Project {...project} key={project.img} />
+      ))}
     </Header>
   </Layout>
 )
