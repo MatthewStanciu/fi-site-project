@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import { Container } from '../components/Container'
 import Project from '../components/Project'
 
-const Header = styled(Container).attrs({ maxWidth: 72, px: 3, mb: 6 })`
+const Header = styled(Container).attrs({ maxWidth: 72, px: 3, my: 4 })`
   display: grid;
   grid-gap: 32px;
   text-align: left;
