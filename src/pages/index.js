@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Heading } from 'rebass'
 import theme from '../theme/config'
 import Layout from '../components/Layout'
 import { Container } from '../components/Container'
@@ -19,6 +20,15 @@ const Header = styled(Container).attrs({ maxWidth: 72, px: 3, my: 4 })`
 
 export default () => (
   <Layout>
+    <Heading
+      as="h1"
+      color="lightRed"
+      textAlign="center"
+      mb={4}
+      fontSize={[4, null, 4, 6]}
+    >
+      A heading if you want it
+    </Heading>
     <Header>
       {projects.map(project => (
         <Project {...project} key={project.img} />
