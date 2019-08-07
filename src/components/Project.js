@@ -1,27 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, Text, Heading, Box } from 'rebass'
-import theme from '../theme/config'
+import { Card, Box, Heading, Text } from 'rebass'
 
-export const GridItem = styled(Card).attrs({
+export const GridCard = styled(Card).attrs({
   bg: 'white',
-  width: 1
+  width: 1,
+  mb: 4
 })`
-  display: flex;
-  flex-direction: column;
+  display: block;
   overflow: hidden;
   border-radius: 6px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.125);
   line-height: 0;
-  transition: ease-out all 0.125s;
-  &:hover,
-  &:focus {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.125);
-    transform: scale(1.025);
-  }
+  break-inside: avoid;
 `
 
-export const GridItemBanner = styled(Box).attrs({
+export const GridCardBanner = styled(Box).attrs({
   fontSize: 3,
   color: 'coffee',
   bg: 'lightBlue',
@@ -34,16 +27,16 @@ export const GridItemBanner = styled(Box).attrs({
   flex-shrink: none;
 `
 
-const Project = ({ name, desc, url, img }) => (
-  <GridItem>
-    <img src={require(`../../static/${img}`)} alt={name} />
-    <GridItemBanner as="a" href={url} target="_blank">
+const Project = ({ name, desc, url, img, ...props }) => (
+  <GridCard {...props}>
+    <img src={img} />
+    <GridCardBanner>
       <Heading as="h3" fontSize={[4, 5]} mb={2}>
         {name}
       </Heading>
       <Text>{desc}</Text>
-    </GridItemBanner>
-  </GridItem>
+    </GridCardBanner>
+  </GridCard>
 )
 
 export default Project
