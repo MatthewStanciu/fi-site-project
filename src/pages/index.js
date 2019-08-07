@@ -5,16 +5,17 @@ import theme from '../theme/config'
 import Layout from '../components/Layout'
 import { Container } from '../components/Container'
 import Project from '../components/Project'
+import Project2 from '../components/Project2'
+import { Projects } from '../components/Project2'
 import { projects } from '../data.json'
 
 const Header = styled(Container).attrs({ maxWidth: 72, px: 3, my: 4 })`
-  display: grid;
-  grid-gap: 32px;
-  text-align: left;
   width: 100%;
 
   ${theme.mediaQueries.md} {
-    grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
+    column-gap: 32px;
+    // grid-template-columns: repeat(2, 1fr);
   }
 `
 
@@ -29,10 +30,10 @@ export default () => (
     >
       A heading if you want it
     </Heading>
-    <Header>
+    <Projects>
       {projects.map(project => (
-        <Project {...project} key={project.img} />
+        <Project2 {...project} key={project.img} />
       ))}
-    </Header>
+    </Projects>
   </Layout>
 )
